@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Expires" CONTENT="-1">
+        <title>Prenotazione Effettuata</title>
+    </head>
+    <body>
+        <h1>Prenotazione effettuata con successo</h1>
+        <p th:text="'ID: ' + ${prenotazione.id}" />
+        <p th:text="'Nome: ' + ${prenotazione.nome}" />
+        <p th:text="'Cognome: ' + ${prenotazione.cognome}" />
+        <p th:text="'Matricola: ' + ${prenotazione.matricola}" />
+        <p th:text="'Materia: ' + ${prenotazione.materia}" />
+        <p th:text="'CFU Materia: ' + ${prenotazione.cfu_materia}" />
+        <p><a href="/effettuaPrenotazione">Effettua un'altra prenotazione</a></p>
+        <p><a href="/">Torna alla home</a></p>
+    </body>
+</html>

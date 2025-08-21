@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Expires" CONTENT="-1">
+        <title>Prenotazione ID: <span th:text="${prenotazione.id}"></span></title>
+    </head>
+    <body>
+        <form action="#" th:action="@{/}" th:object="${prenotazione}" method="POST">
+            Nome <input type="text" th:field="*{nome}">
+            Cognome <input type="text" th:field="*{cognome}">
+            Matricola <input type="text" th:field="*{matricola}">
+            Materia <input type="text" th:field="*{materia}">
+            CFU Materia <input type="text" th:field="*{cfu_materia}">
+            <input type="submit" value="Modifica">
+        </form>
+    </body>
+</html>

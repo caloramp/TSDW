@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Expires" CONTENT="-1">
+        <title>Home</title>
+        <style>
+            
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            td {
+              padding: 8px;
+              text-align: center;
+              border-bottom: 1px solid #000000;
+            }
+            
+            th:hover {background-color: #ffffff00;}
+            tr:hover {background-color: #ff660d;}
+            </style>
+    </head>
+    <body>
+        <h1>Benvenuto sul portale prenotazioni</h1>
+        <h2>Numero di prenotazioni attuali: <span th:text="${nPrenotazioni}"></span></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Matricola</th>
+                    <th>Materia</th>
+                    <th>CFU Materia</th>
+                </tr>
+                <tr th:each="prenotazione: ${prenotazioni}">
+                    <td><span th:text="${prenotazione.id}"></span></td>
+                    <td><span th:text="${prenotazione.nome}"></span></td>
+                    <td><span th:text="${prenotazione.cognome}"></span></td>
+                    <td><span th:text="${prenotazione.matricola}"></span></td>
+                    <td><span th:text="${prenotazione.materia}"></span></td>
+                    <td><span th:text="${prenotazione.cfu_materia}"></span></td>
+                    <td><a th:href="@{/delete/{id}(id=${prenotazione.id})}">Elimina</a></td>
+                    <td><a th:href="@{prenotazione/{id}(id=${prenotazione.id})}">Modifica</a></td>
+                </tr>
+            </thead>
+        </table>
+        <a href="/effettuaPrenotazione">Effettua una nuova prenotazione</a>
+    </body>
+</html>
